@@ -69,6 +69,7 @@ class AppParams:
             _params["prompt_text_column"] = self.column_mapping.get("prompt", "prompt")
             _params["rejected_text_column"] = self.column_mapping.get("rejected_text", "rejected_text")
             _params["train_split"] = self.train_split
+            _params["valid_split"] = self.valid_split
         _params["log"] = "tensorboard"
 
         trainer = self.task.split(":")[1]
