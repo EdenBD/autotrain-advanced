@@ -345,6 +345,7 @@ class RunAutoTrainLLMCommand(BaseAutoTrainCommand):
         logger.info("Running LLM")
         if self.args.train:
             params = LLMTrainingParams(**vars(self.args))
+            print("self.args", self.args)
             params = llm_munge_data(params, local=self.args.backend.startswith("local"))
             project = AutoTrainProject(params=params, backend=self.args.backend)
             _ = project.create()

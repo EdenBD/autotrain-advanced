@@ -59,6 +59,7 @@ class AppParams:
 
     def _munge_params_llm(self):
         _params = self._munge_common_params()
+        print("munge params llm _params common params", _params)
         _params["model"] = self.base_model
         if not self.using_hub_dataset:
             _params["text_column"] = "autotrain_text"
@@ -74,6 +75,9 @@ class AppParams:
         _params["log"] = "tensorboard"
 
         trainer = self.task.split(":")[1]
+        print("munge params llm _params[valid_split]", _params["valid_split"])
+        print("self.using_hub_dataset", self.using_hub_dataset)
+        print("self.valid_split", self.valid_split)
         if trainer != "generic":
             _params["trainer"] = trainer.lower()
 
