@@ -64,6 +64,7 @@ class AppParams:
             _params["text_column"] = "autotrain_text"
             _params["prompt_text_column"] = "autotrain_prompt"
             _params["rejected_text_column"] = "autotrain_rejected_text"
+            _params["valid_split"] = "validation"
         else:
             _params["text_column"] = self.column_mapping.get("text", "text")
             _params["prompt_text_column"] = self.column_mapping.get("prompt", "prompt")
